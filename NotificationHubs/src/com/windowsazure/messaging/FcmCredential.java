@@ -4,19 +4,14 @@ import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @deprecated use {@link #FcmCredential()} instead.
- */
- 
-@Deprecated
-public final class GcmCredential extends PnsCredential {	
+public final class FcmCredential extends PnsCredential {	
 	private String googleApiKey;
 	
-	public GcmCredential(){
+	public FcmCredential(){
 		this(null);
 	}
 		
-	public GcmCredential(String googleApiKey){
+	public FcmCredential(String googleApiKey){
 		super();
 		this.setGoogleApiKey(googleApiKey);
 	}
@@ -24,10 +19,6 @@ public final class GcmCredential extends PnsCredential {
 	public String getGoogleApiKey() {
 		return googleApiKey;
 	}
-
-   	public void setgoogleApiKey(String googleApiKey) {
-        	this.googleApiKey = googleApiKey; // fix for reflection that's calling 'setgoogleApiKey' instead of 'setGoogleApiKey'.
-    	}
 
 	public void setGoogleApiKey(String googleApiKey) {
 		this.googleApiKey = googleApiKey;
@@ -42,6 +33,6 @@ public final class GcmCredential extends PnsCredential {
 
 	@Override
 	public String getRootTagName() {
-		return "GcmCredential";
+		return "FcmCredential";
 	}
 }
